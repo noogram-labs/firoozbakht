@@ -1,10 +1,11 @@
 # Full-lane status
 
-**12 / 23 nodes complete.** The fleet is draining the DAG; this file and the artifacts around it fill in as nodes finish.
+**14 / 23 nodes complete.**
 
 | node role | state |
 |---|---|
 | `-` | ✅ done |
+| `coder` | ✅ done |
 | `coder` | ✅ done |
 | `coder` | ✅ done |
 | `collector` | ✅ done |
@@ -14,18 +15,17 @@
 | `proofsmith` | ✅ done |
 | `proofsmith` | ✅ done |
 | `proofsmith` | ✅ done |
+| `red-team-mathematician` | ✅ done |
 | `skeptic` | ✅ done |
 | `sourcer` | ✅ done |
-| `coder` | ⏳ running |
 | `probe-engineer` | ⏳ running |
+| `skeptic` | ⏳ running |
 | `editor` | · pending |
 | `editor` | · pending |
 | `hypha` | · pending |
 | `proofsmith` | · pending |
-| `red-team-mathematician` | · pending |
 | `reviewer` | · pending |
-| `skeptic` | · pending |
 | `synthesizer` | · pending |
 | `writer` | · pending |
 
-> Generated from cosmon node states. Molecule IDs and machine paths are deliberately omitted; only node roles are shown.
+> Node roles only; molecule IDs and machine paths omitted.
