@@ -1,6 +1,6 @@
 # Full-lane status
 
-**18 / 23 nodes complete.**
+**19 / 23 nodes complete.**
 
 | node role | state |
 |---|---|
@@ -22,10 +22,10 @@
 | `skeptic` | ✅ done |
 | `skeptic` | ✅ done |
 | `sourcer` | ✅ done |
+| `synthesizer` | ✅ done |
 | `editor` | · pending |
 | `hypha` | · pending |
 | `reviewer` | · pending |
-| `synthesizer` | · pending |
 | `writer` | · pending |
 
 > Node roles only; molecule IDs and machine paths omitted.
