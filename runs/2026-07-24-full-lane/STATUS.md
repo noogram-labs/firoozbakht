@@ -1,6 +1,6 @@
 # Full-lane status
 
-**15 / 23 nodes complete.**
+**17 / 23 nodes complete.**
 
 | node role | state |
 |---|---|
@@ -12,6 +12,8 @@
 | `concept-writer` | ✅ done |
 | `concept-writer` | ✅ done |
 | `kernel-engineer` | ✅ done |
+| `probe-engineer` | ✅ done |
+| `proofsmith` | ✅ done |
 | `proofsmith` | ✅ done |
 | `proofsmith` | ✅ done |
 | `proofsmith` | ✅ done |
@@ -19,11 +21,9 @@
 | `skeptic` | ✅ done |
 | `skeptic` | ✅ done |
 | `sourcer` | ✅ done |
-| `probe-engineer` | ⏳ running |
-| `editor` | · pending |
+| `editor` | ⏳ running |
 | `editor` | · pending |
 | `hypha` | · pending |
-| `proofsmith` | · pending |
 | `reviewer` | · pending |
 | `synthesizer` | · pending |
 | `writer` | · pending |
