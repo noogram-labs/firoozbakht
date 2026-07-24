@@ -1,6 +1,6 @@
 # Full-lane status
 
-**14 / 23 nodes complete.**
+**15 / 23 nodes complete.**
 
 | node role | state |
 |---|---|
@@ -17,9 +17,9 @@
 | `proofsmith` | ✅ done |
 | `red-team-mathematician` | ✅ done |
 | `skeptic` | ✅ done |
+| `skeptic` | ✅ done |
 | `sourcer` | ✅ done |
 | `probe-engineer` | ⏳ running |
-| `skeptic` | ⏳ running |
 | `editor` | · pending |
 | `editor` | · pending |
 | `hypha` | · pending |

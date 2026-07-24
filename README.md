@@ -8,10 +8,16 @@
 > — alongside a single-model benchmark. Each proof-attempt opens with an explicit
 > verdict and does **not** fake a proof: attempt #0 states its obstruction exactly
 > and finds its own motivating premise false as stated; #1 and #2 report "open —
-> neither proved nor refuted." Still landing as the DAG drains: the adversarial
-> **skeptic** that recomputes every claim, the Lean **`lake build` probe** (the
-> verdict itself), the **citation audit**, and the **red-team**. Watch the commit
-> log, or see
+> neither proved nor refuted." The **rigor layer is in too**: the adversarial
+> **skeptic** attacked every proof line-by-line, re-derived every number in
+> independent code, fetched the primary sources — found no mathematical error, but
+> **blocked the seal** on two epistemic-standing faults (a provenance file
+> overstating its own verification by 47%, an invalid inference sold as a result).
+> And the **Lean `lake build` probe** returned the machine verdict: exit 0,
+> **exactly one `sorry` — the conjecture itself — left honestly undischarged**
+> (`sorryAx` in `#print axioms`), while the budget produced **11 new `sorry`-free
+> machine-checked theorems** around it. Still landing: the citation/evidence gates
+> and the synthesis write-up. Watch the commit log, or see
 > [`runs/2026-07-24-full-lane/STATUS.md`](runs/2026-07-24-full-lane/STATUS.md)
 > for exactly which nodes have completed.
 
