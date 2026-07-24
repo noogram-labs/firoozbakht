@@ -1,7 +1,6 @@
 # Firoozbakht's conjecture — attack-surface decomposition
 
 **Leg**: `decompose` (node 1 of the `math-attack` polymer)
-**Node**: decompose (formula `task-work-reasoning`)
 **Crew role**: concept-writer
 **Formal backend requested**: Lean 4 / Mathlib
 **Date**: 2026-07-24
