@@ -1,26 +1,26 @@
 # Full-lane status
 
-**6 / 23 nodes complete.** The fleet is draining the DAG; this file and the artifacts around it fill in as nodes finish.
+**12 / 23 nodes complete.** The fleet is draining the DAG; this file and the artifacts around it fill in as nodes finish.
 
 | node role | state |
 |---|---|
 | `-` | ✅ done |
+| `coder` | ✅ done |
+| `coder` | ✅ done |
 | `collector` | ✅ done |
 | `concept-writer` | ✅ done |
 | `concept-writer` | ✅ done |
+| `kernel-engineer` | ✅ done |
+| `proofsmith` | ✅ done |
+| `proofsmith` | ✅ done |
+| `proofsmith` | ✅ done |
 | `skeptic` | ✅ done |
 | `sourcer` | ✅ done |
 | `coder` | ⏳ running |
-| `coder` | ⏳ running |
-| `coder` | · pending |
+| `probe-engineer` | ⏳ running |
 | `editor` | · pending |
 | `editor` | · pending |
 | `hypha` | · pending |
-| `kernel-engineer` | · pending |
-| `probe-engineer` | · pending |
-| `proofsmith` | · pending |
-| `proofsmith` | · pending |
-| `proofsmith` | · pending |
 | `proofsmith` | · pending |
 | `red-team-mathematician` | · pending |
 | `reviewer` | · pending |

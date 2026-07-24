@@ -2,12 +2,16 @@
 
 > ### ⏳ Run in progress
 > This repository is being written **by an agent fleet that is still running.**
-> The understanding phase is in — decomposition, source ledger, concept cards,
-> framing — alongside a single-model benchmark. The heavier full-lane
-> deliverables — the fleet's own proof-attempts, the adversarial skeptic that
-> recomputes every claim, the Lean `lake build` firewall, the citation audit, and
-> the red-team — land here as the DAG drains, over the coming hours. Watch the
-> commit log, or see
+> The understanding phase and the **attack** are in: decomposition, source ledger,
+> concept cards, framing, **three proof-attempts** (one per subquestion), the
+> **Lean skeleton** (the firewall's formal statement), and computational notebooks
+> — alongside a single-model benchmark. Each proof-attempt opens with an explicit
+> verdict and does **not** fake a proof: attempt #0 states its obstruction exactly
+> and finds its own motivating premise false as stated; #1 and #2 report "open —
+> neither proved nor refuted." Still landing as the DAG drains: the adversarial
+> **skeptic** that recomputes every claim, the Lean **`lake build` probe** (the
+> verdict itself), the **citation audit**, and the **red-team**. Watch the commit
+> log, or see
 > [`runs/2026-07-24-full-lane/STATUS.md`](runs/2026-07-24-full-lane/STATUS.md)
 > for exactly which nodes have completed.
 
