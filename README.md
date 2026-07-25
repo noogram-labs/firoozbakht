@@ -60,6 +60,13 @@ run failing.*
    mechanically checks the locators the prover cited from memory, and Lean
    refuses the hand-wave.
 
+> **A clean-room re-run now exists:**
+> [`noogram-labs/firoozbakht-cleanroom`](https://github.com/noogram-labs/firoozbakht-cleanroom).
+> Same conjecture, same spore, a working tree that contained no prior attempt for
+> the entire run — and published exactly as generated, with no staging copy and no
+> scrub pass. Read that one for the independent attack; read this one for the
+> contamination and what the fleet did with it.
+
 ### ⚠️ This is not a clean-room comparison — and here is exactly why
 
 Read the two side by side, but **do not read them as independent runs.** The solo
