@@ -1,4 +1,20 @@
-# firoozbakht — a full-lane cosmon-fleet attack on Firoozbakht's conjecture
+# firoozbakht — the first full-lane fleet attack, and the baseline it was measured against
+
+> **Which repository is which.** Two runs of the same spore on the same
+> conjecture exist, and they answer different questions:
+>
+> | | This repo | [`firoozbakht-cleanroom`](https://github.com/noogram-labs/firoozbakht-cleanroom) |
+> |---|---|---|
+> | Run | First full lane, 23 nodes | Clean-room re-run, 22 nodes |
+> | Working tree during the run | Contained a solo-model attempt, which the fleet read | Contained nothing but the spore's own output |
+> | Comparison against the baseline | Not independent — see the caveat below | Independent |
+> | Published as | A rebuilt, scrubbed repo | The galaxy exactly as generated |
+> | Also hosts | **The Codex solo baseline** both runs are compared against | — |
+>
+> Read this one for the baseline, and for what a fleet does when a stray
+> document enters its workspace. Read the other for the independent attack.
+> The comparative study of both is in
+> [sporarium `docs/reports/`](https://github.com/noogram/sporarium/tree/main/docs/reports).
 
 > ### ✅ Run complete — 23/23 nodes — and the seal is **BLOCKED**, honestly
 > The fleet drained the whole DAG. The headline is not a proof; it is a
