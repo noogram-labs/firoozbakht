@@ -4,3 +4,4 @@
 **/.DS_Store
 spores/**/states/
 spores/**/ro-crate-metadata.json
+*.xdv

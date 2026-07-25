@@ -1,0 +1,1512 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  a4paper,
+  11pt]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
+\usepackage{etoolbox}
+\AtBeginEnvironment{longtable}{\footnotesize}
+\setlength{\tabcolsep}{4pt}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={The primes and the fence: an attack on Firoozbakht\textquotesingle s conjecture},
+  pdfauthor={Noogram},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={MidnightBlue},
+  urlcolor={MidnightBlue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{The primes and the fence: an attack on
+Firoozbakht\textquotesingle s conjecture}
+\author{Noogram}
+\date{2026-07-24}
+
+\begin{document}
+\maketitle
+
+\nocite{*}
+
+\subsection{0. Posture, stated before anything
+else}\label{0-posture-stated-before-anything-else}
+
+\subsubsection{0.1 The conjecture is
+open}\label{01-the-conjecture-is-open}
+
+\begin{quote}
+\textbf{Firoozbakht\textquotesingle s conjecture is open.} This paper
+does \textbf{not} prove it and does \textbf{not} refute it. No leg of
+the polymer that produced this paper generated any evidence about its
+truth in either direction, and this paper generates none either.
+
+Everything below is a report on \emph{arguments, machine-checked
+formalisations, computations and citations}. Nowhere is a statement made
+about the conjecture\textquotesingle s truth value beyond the single
+word \textbf{open}.
+\end{quote}
+
+The word \textbf{proved} is used in this paper under one rule and no
+other:
+
+\begin{quote}
+\textbf{Proof discipline.} A statement is called \textbf{proved} only
+where a Lean 4 kernel checked it and \texttt{\#print\ axioms} showed the
+clean line \texttt{{[}propext,\ Classical.choice,\ Quot.sound{]}} --- no
+\texttt{sorryAx}, no \texttt{Lean.ofReduceBool}. Every such statement is
+listed in §4 with its verbatim Lean type. Statements established by
+human argument are called \textbf{established} or \textbf{argued}, never
+proved, and each carries its weakest premise\textquotesingle s tier
+(§1.3).
+\end{quote}
+
+\subsubsection{0.2 Delivery posture: staged, and
+why}\label{02-delivery-posture-staged-and-why}
+
+This paper is \textbf{staged, not cleared}. Three gates stand between it
+and release, and none of them has passed:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+gate & status & consequence for this paper \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{evidence-gate} & \textbf{BLOCKED} (§8) & two live BLOCKER faults
+in the corpus\textquotesingle s self-description \\
+\texttt{citation-gate} & \textbf{NOT RUN} & no citation in this paper
+has been independently re-fetched and re-read by an auditor \\
+\texttt{editorial-verdict} & \textbf{NOT RUN} & the adversarial review
+of this document is a separate downstream molecule \\
+\end{longtable}
+
+§9 lists exactly what must close before this document can be released,
+and §10 lists what it does not claim.
+
+\subsubsection{0.3 Attribution}\label{03-attribution}
+
+External attribution for this work is \textbf{Noogram}.
+Firoozbakht\textquotesingle s conjecture is attributed to Faride
+Firoozbakht (1982); §11.3 records that no primary document by
+Firoozbakht exists, and states what may and may not be written about
+that attribution.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. The problem, and the shape of
+it}\label{1-the-problem-and-the-shape-of-it}
+
+\subsubsection{1.1 Statement}\label{11-statement}
+
+Let \(p_n\) denote the \(n\)-th prime, \textbf{1-indexed}: \(p_1 = 2\),
+\(p_2 = 3\), \(p_3 = 5\), \ldots. Write \(g_n := p_{n+1} - p_n\) for the
+\(n\)-th prime gap and \(L_n := \log p_n\) (natural logarithm
+throughout).
+
+\begin{quote}
+\textbf{Firoozbakht\textquotesingle s conjecture (F).} For every
+\(n \ge 1\), \[p_{n+1}^{\,1/(n+1)} \;<\; p_n^{\,1/n},\] equivalently:
+the sequence \(\big(p_n^{1/n}\big)_{n \ge 1}\) is \textbf{strictly
+decreasing}.
+\end{quote}
+
+The conjecture was proposed by Faride Firoozbakht in 1982 and remains
+open. Its earliest public record is Rivera\textquotesingle s \emph{Prime
+Puzzles} Conjecture 30 (2002) {[}\texttt{rivera2002conj30}, V1{]}; its
+earliest citable print record is Ribenboim, \emph{The Little Book of
+Bigger Primes}, 2nd ed., p. 185 {[}\texttt{ribenboim2004little}, V2{]}.
+
+\subsubsection{1.2 Five forms, all pointwise
+equivalent}\label{12-five-forms-all-pointwise-equivalent}
+
+The conjecture admits five natural phrasings. They are \textbf{pointwise
+equivalent} --- index by index, with no asymptotics and no exceptional
+set. This is an elementary but load-bearing fact: it is what licenses
+proving in one form and stating in another.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+form & statement & ambient \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{F1} & \(p_{n+1}^{1/(n+1)} < p_n^{1/n}\) & \(\mathbb{R}\), real
+power \\
+\textbf{F2} & \(p_{n+1}^{\,n} < p_n^{\,n+1}\) & \(\mathbb{N}\), pure
+integer \\
+\textbf{F3} & \(n\log p_{n+1} < (n+1)\log p_n\) & \(\mathbb{R}\) \\
+\textbf{F4} & \(a_{n+1} < a_n\), where \(a_n := (\log p_n)/n\) &
+\(\mathbb{R}\) \\
+\textbf{F5} & \(S_n > 0\), where
+\(S_n := (n+1)\log p_n - n\log p_{n+1}\) & \(\mathbb{R}\) \\
+\end{longtable}
+
+\emph{Proof of equivalence.} \(p_n \ge 2 > 0\), so both sides of F1 are
+positive and \(\log\) is strictly increasing: F1
+\(\iff \tfrac{1}{n+1}\log p_{n+1} < \tfrac{1}{n}\log p_n\), and
+multiplying by \(n(n+1) > 0\) gives F3. F3 \(\iff\) F2 because \(\exp\)
+is strictly increasing and \(m^k = \exp(k \log m)\) for \(m \ge 1\). F3
+\(\iff\) F4 by dividing by \(n(n+1) > 0\). F3 \(\iff\) F5 is the
+definition of \(S_n\). \(\square\)
+
+The bridges F1 \(\iff\) F2, F1 \(\iff\) F3 and F1 \(\iff\) (the gap form
+below) are \textbf{proved} in the machine-checked sense of §0.1 --- see
+§4.2.
+
+\subsubsection{\texorpdfstring{1.3 The exact criterion: the conjecture
+\emph{is} a statement about prime
+gaps}{1.3 The exact criterion: the conjecture is a statement about prime gaps}}\label{13-the-exact-criterion-the-conjecture-is-a-statement-about-prime-gaps}
+
+\begin{quote}
+\textbf{Lemma 1 (exact criterion).} For every \(n \ge 1\),
+\[\mathrm{F}\text{ holds at } n \quad\Longleftrightarrow\quad g_n \;<\; f_n,
+\qquad f_n \;:=\; p_n^{\,1+1/n} - p_n \;=\; p_n\big(e^{L_n/n} - 1\big).\]
+\end{quote}
+
+\emph{Proof.} By §1.2, F at \(n\) \(\iff\)
+\(n \log p_{n+1} < (n+1)\log p_n \iff \log p_{n+1} <
+(1+\tfrac1n)L_n \iff p_{n+1} < p_n^{1+1/n}\); subtract \(p_n\). Every
+step is an equivalence. \(\square\)
+
+\textbf{There is no side condition, no asymptotic regime, no exceptional
+small-\(n\) set, and no external explicit bound.} Lemma 1 is the whole
+content of the conjecture, index by index. It is also \textbf{proved} in
+the machine-checked sense (\texttt{firoozbakht\_iff\_gap}, §4.2), in the
+equivalent formulation \(g_n < B_n\) with
+\(B_n := p_n(p_n^{1/n}-1) = f_n\).
+
+Call \(\sigma_n := f_n - g_n\) the \textbf{shortfall} at \(n\); F at
+\(n\) \(\iff\) \(\sigma_n > 0\).
+
+Two consequences organise everything that follows.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\(f_n\) is strictly decreasing in \(n\) for fixed \(p_n\).}
+  Hence \emph{verifying} F needs an \textbf{upper} bound on the index
+  \(n = \pi(p_n)\), and \emph{refuting} it needs a \textbf{lower} bound.
+  Getting this backwards converts a verification into a refutation
+  claim; it is the most common way to lose the thread in this subject.
+\item
+  \textbf{Asymptotically \(f_n = \log^2 p_n - \log p_n - 1 + o(1)\)}
+  {[}\texttt{kourbatov2015upper} Thm 5, V0{]}. So the fence sits at
+  height about \((\log p)^2\).
+\end{itemize}
+
+\subsubsection{1.4 The picture}\label{14-the-picture}
+
+The primes walk along a road. Every step is a gap. Firoozbakht drew a
+fence at height roughly \((\log p)^2\) and said: \textbf{the primes
+never jump it --- not once, not ever, all the way to infinity.}
+
+That picture makes both branches of the attack immediately legible.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{To prove F}, one needs an upper bound on \emph{every} prime
+  gap, of size \((\log p)^2\)-ish, with an explicit constant strictly
+  below \(1\). Nothing in analytic number theory produces a
+  polylogarithmic gap bound at all. The best unconditional bound is
+  \(g_n \ll p_n^{0.525}\) {[}\texttt{bhp2001difference}, V2{]}; the
+  Riemann hypothesis gives \(g_n \ll \sqrt{p_n}\log p_n\). Those are
+  \textbf{powers of \(p\) against powers of \(\log p\)}. The distance is
+  not quantitative --- it is categorical.
+\item
+  \textbf{To refute F}, one needs a single gap that clears the fence. At
+  the record locus the gap reaches \(92.06\%\) of \((\log p)^2\) while
+  the fence sits at \(97.06\%\) of the same quantity --- a shortfall
+  factor of \(1.05426\) (§5.1). A few percent, in a quantity that took
+  decades of distributed computation to measure.
+\end{itemize}
+
+The proof branch is blocked by a wall. The refutation branch is
+\emph{close} but not reachable. §7.4 records how this framing was itself
+demoted during the work.
+
+\subsubsection{1.5 Tiering convention}\label{15-tiering-convention}
+
+Two orthogonal ladders are used, and they are never conflated.
+
+\textbf{Claim tier} --- how well a \emph{claim} is established:
+\textbf{L0} proved here from first principles; \textbf{L1}
+standard/textbook; \textbf{L2} attributed with a verified locator;
+\textbf{L3} heuristic, recalled, or resting on an unrefereed
+computational record; \textbf{{[}C{]}} additionally recomputed by a
+verifier script in the run. A composite claim inherits its
+\textbf{weakest} premise\textquotesingle s tier.
+
+\textbf{Citation tier} --- how well a \emph{citation} was checked:
+\textbf{V0} primary obtained and the statement read verbatim at the
+named locator; \textbf{V1} primary\textquotesingle s own metadata page
+read; \textbf{V2} confirmed via a reliable secondary quoting the
+primary; \textbf{V3} bibliographic metadata only, statement at locator
+\textbf{not} verified. Every citation in this paper is tagged, and §11
+traces each to its source-ledger row.
+
+\textbf{A V3 locator is not usable.} Where this paper touches one, it
+says so and does not lean on it.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{2. Method}\label{2-method}
+
+\subsubsection{2.1 What was actually
+done}\label{21-what-was-actually-done}
+
+The attack ran as a directed polymer of specialised legs, each producing
+an artifact another leg had to read. In rough order:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Decomposition} --- reduce the conjecture to its equivalent
+  forms and to the gap criterion (§1.2, §1.3); enumerate attack routes.
+\item
+  \textbf{Frame deliberation} --- a five-perspective panel adjudicating
+  which branch is live.
+\item
+  \textbf{Source ledger} --- build the bibliography as \emph{(citekey,
+  verification level, precise locator, exact statement as the source
+  writes it)}, with independent recomputation of every numeric row.
+\item
+  \textbf{Concept cards} --- 31 atomic definitions/lemmas, each carrying
+  its ledger row.
+\item
+  \textbf{Lean skeleton, then Lean probe} --- state the conjecture in
+  Lean 4 / Mathlib and attempt real proof terms.
+\item
+  \textbf{Proof attempts} --- three targets, attacked as mathematics:
+  first-failure maximality, the RH-conditional route, and the
+  unconditional verified range.
+\item
+  \textbf{Notebooks} --- three computational legs, exhaustive and
+  lever-based.
+\item
+  \textbf{Red-team corpus} --- 19 adversarial artifacts designed to slip
+  past a naive gate.
+\item
+  \textbf{Skeptic} --- an adversarial audit that re-derived every
+  load-bearing number in independent code and re-fetched five primary
+  sources.
+\item
+  \textbf{Evidence gate} --- fail-closed adjudication.
+\item
+  \textbf{Synthesis}, then this paper.
+\end{enumerate}
+
+\subsubsection{2.2 Method commitments}\label{22-method-commitments}
+
+Four commitments constrain everything reported here.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Fail-closed gates.} A gate that cannot establish its predicate
+  returns FAIL, never "probably fine". The evidence gate returned
+  \textbf{BLOCKED}, and §8 reports it as such.
+\item
+  \textbf{The kernel is the only source of the word "proved".} §0.1.
+\item
+  \textbf{The \texttt{sorry} grep is not the audit.} A raw
+  \texttt{grep\ -c\ sorry} over the statement file returns 6, of which
+  exactly \textbf{one} is a genuine \texttt{sorry} in code --- the rest
+  are prose discussing what remains open. Verdicts rest on the
+  \texttt{\#print\ axioms} whitelist, which cannot be fooled by
+  formatting.
+\item
+  \textbf{Computation corroborates or refutes; it never proves.} No
+  finite range bears on the conjecture. A certified range is a
+  \emph{fidelity instrument}, not evidence.
+\end{itemize}
+
+\subsubsection{2.3 The formal
+environment}\label{23-the-formal-environment}
+
+Lean 4 \texttt{v4.29.0} with Mathlib \texttt{v4.29.0} (revision pinned
+in the run\textquotesingle s \texttt{lake-manifest.json}).
+\texttt{lake\ build} completes with \textbf{exit status 0}, 8253 jobs.
+An \texttt{Audit.lean} module is part of the library, so
+\texttt{\#print\ axioms} runs on \emph{every} build and cannot silently
+rot. No \texttt{native\_decide} appears anywhere in the sources, so
+\texttt{Lean.ofReduceBool} never enters the trusted base: the finite
+verification is kernel-checked, not compiler-trusted.
+
+\subsubsection{2.4 A named self-check on every result
+claim}\label{24-a-named-self-check-on-every-result-claim}
+
+The run\textquotesingle s red-team corpus produced an artifact
+(\texttt{RT-12}) that builds with exit 0, is \texttt{sorry}-free, is
+axiom-clean, \textbf{and proves a true theorem} --- where the falsehood
+lives in the sentence a paper would put next to it. That artifact
+imposes a standing requirement on this document:
+
+\begin{quote}
+\textbf{RT-12 requirement.} For every declaration this paper names as a
+result, print its Lean type and confirm the conclusion is not among its
+hypotheses.
+\end{quote}
+
+§4.4 discharges that requirement for all fourteen declarations named in
+§4.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{3. Results at a glance}\label{3-results-at-a-glance}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+question & answer \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Is the conjecture \textbf{proved}? & \textbf{No.} The Lean declaration
+\texttt{Firoozbakht.firoozbakht} still ends in \texttt{sorry}; its axiom
+line contains \texttt{sorryAx}. \\
+Is the conjecture \textbf{refuted}? & \textbf{No.} No counterexample at
+any scale examined. \\
+Was anything \textbf{proved} (kernel sense)? & \textbf{Yes} --- 11 new
+theorems plus a 26-entry prime table, including the conjecture itself
+for all \(1 \le n \le 25\) and two exact refutation criteria. §4. \\
+Was anything \textbf{established on paper}? & \textbf{Yes} --- §5. Two
+exact criteria, a verified-range theorem at \(H = 10^{20}\) under two
+named premises, and three dead routes with quantitative obituaries.
+§6. \\
+Evidence-gate status & \textbf{BLOCKED}. §8. \\
+Citation clearance & \textbf{Not claimed, not audited.} §9. \\
+\end{longtable}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4. What was PROVED --- machine-checked in Lean 4 /
+Mathlib}\label{4-what-was-proved--machine-checked-in-lean-4--mathlib}
+
+Everything in this section satisfies §0.1: \texttt{lake\ build} exit 0,
+and \texttt{\#print\ axioms} showing
+\texttt{{[}propext,\ Classical.choice,\ Quot.sound{]}} for each
+declaration.
+
+Throughout, \texttt{nthPrime\ n} is the Lean 1-indexed \(n\)-th prime,
+\texttt{noncomputable\ def\ nthPrime\ (n\ :\ ℕ)\ :\ ℕ\ :=\ Nat.nth\ Nat.Prime\ (n\ -\ 1)},
+and \texttt{barrier\ n} is the exact barrier \(B_n = p_n(p_n^{1/n}-1)\)
+of Lemma 1.
+
+\subsubsection{4.1 The headline: the conjecture, proved outright, for 25
+consecutive
+indices}\label{41-the-headline-the-conjecture-proved-outright-for-25-consecutive-indices}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theorem firoozbakht\_of\_le (n : ℕ) (h1 : 1 ≤ n) (h2 : n ≤ 25) :}
+\NormalTok{    (nthPrime (n + 1) : ℝ) \^{} ((1 : ℝ) / ((n : ℝ) + 1)) \textless{}}
+\NormalTok{      (nthPrime n : ℝ) \^{} ((1 : ℝ) / (n : ℝ))}
+\end{Highlighting}
+\end{Shaded}
+
+This is the \textbf{literal F1 form} --- real powers, not the integer
+surrogate --- and its axiom line is clean:
+
+\begin{verbatim}
+'Firoozbakht.firoozbakht_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+
+so it is \textbf{not circular}: it does not depend on the
+\texttt{sorry}-ed conjecture. It is a genuine unconditional fragment of
+an open problem, checked by the same kernel that checks the bridges.
+
+\textbf{Honest sizing, stated immediately and without softening.} The
+bound \(n \le 25\) is set by \textbf{compile time, not by mathematics}
+--- the bridge lemma is uniform in \(n\) and the table extends
+mechanically. And \(n \le 25\) is derisory next to the
+literature\textquotesingle s \(4\times10^{18}\)
+{[}\texttt{kourbatov2015verification}{]} and \(2^{64}\)
+{[}\texttt{visser2019verifying}{]}. \textbf{No finite range bears on the
+conjecture.} The value of this result is not its range; it is that (a)
+the formal method now exists, and (b) a kernel-checked range is a
+different kind of object from a script-checked one.
+
+\subsubsection{\texorpdfstring{4.2 The enabling engineering: a
+computable bridge out of
+\texttt{Nat.nth}}{4.2 The enabling engineering: a computable bridge out of Nat.nth}}\label{42-the-enabling-engineering-a-computable-bridge-out-of-natnth}
+
+\texttt{Nat.nth\ Nat.Prime} is \texttt{noncomputable} --- defined by
+well-founded recursion over an infinite set --- so \texttt{decide}
+cannot evaluate it and \textbf{no finite range could be machine-checked
+at all}. This was the formalisation\textquotesingle s flagged main risk
+item.
+
+The escape hatch is
+\texttt{Nat.nth\_count\ :\ p\ n\ →\ Nat.nth\ p\ (Nat.count\ p\ n)\ =\ n},
+which trades \texttt{nth} for the computable \texttt{count}. The naive
+move works but is quadratic in the wrong variable: a single check
+\texttt{Nat.count\ Nat.Prime\ 97\ =\ 24} walks the whole range
+\([0,97)\) and cost \textbf{\textasciitilde36 s} of kernel reduction as
+measured (one entry, the largest prime in the table). That does not
+scale.
+
+The leg instead proves a step lemma whose cost scales with the
+\textbf{gap}, not the prime:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theorem nthPrime\_succ\_eq \{k p q : ℕ\} (hk : 1 ≤ k) (hp : nthPrime k = p) (hq : Nat.Prime q)}
+\NormalTok{    (hpq : p \textless{} q) (hgap : ∀ m, p \textless{} m → m \textless{} q → ¬ Nat.Prime m) :}
+\NormalTok{    nthPrime (k + 1) = q}
+\end{Highlighting}
+\end{Shaded}
+
+Each \texttt{hgap} obligation is an \texttt{interval\_cases} over a gap
+of size \(< 10\) in this range --- milliseconds. The whole file (both
+bridge lemmas, the 26-entry table, \emph{and} the certified range)
+compiles in \textbf{6.5--9.6 s}. \textbf{No numeral is asserted
+anywhere}: \(p_1 = 2\) comes from Mathlib, and every later entry is
+\emph{derived} from its predecessor.
+
+Also proved and used: \texttt{count\_prime\_eq\_of\_no\_prime} (no prime
+in \([a,b)\) \(\Rightarrow\) \(\pi\) constant across it),
+\texttt{nthPrime\_succ\_le\_of\_prime} (minimality), and the equivalence
+bridges \texttt{firoozbakht\_iff\_log}, \texttt{firoozbakht\_iff\_int},
+\texttt{firoozbakht\_iff\_gap} --- the machine-checked form of §1.2 and
+Lemma 1.
+
+\subsubsection{4.3 Both directional criteria,
+exact}\label{43-both-directional-criteria-exact}
+
+\textbf{Sufficient (verification side).}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theorem firoozbakht\_of\_gap\_lt \{n : ℕ\} (hn : 1 ≤ n)}
+\NormalTok{    (h : (n : ℝ) * ((nthPrime (n + 1) : ℝ) {-} (nthPrime n : ℝ))}
+\NormalTok{        \textless{} (nthPrime n : ℝ) * Real.log (nthPrime n)) :}
+\NormalTok{    (nthPrime (n + 1) : ℝ) \^{} ((1 : ℝ) / ((n : ℝ) + 1)) \textless{}}
+\NormalTok{      (nthPrime n : ℝ) \^{} ((1 : ℝ) / (n : ℝ))}
+\end{Highlighting}
+\end{Shaded}
+
+i.e. \(n g_n < p_n \log p_n \Rightarrow \mathrm{F}\) at \(n\). The proof
+is the single estimate \(\log(p_{n+1}/p_n) \le p_{n+1}/p_n - 1\), which
+is exactly where the exact barrier degrades to its first-order
+surrogate. The hypothesis is therefore \emph{strictly stronger} than the
+conjecture at \(n\): \textbf{sufficient, never necessary.}
+
+\textbf{Necessary conditions for a refutation --- two exact criteria.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theorem not\_firoozbakht\_of\_barrier\_le \{n : ℕ\} (hn : 1 ≤ n)}
+\NormalTok{    (h : barrier n ≤ ((nthPrime (n + 1) : ℝ) {-} (nthPrime n : ℝ))) :}
+\NormalTok{    ¬ ((nthPrime (n + 1) : ℝ) \^{} ((1 : ℝ) / ((n : ℝ) + 1)) \textless{}}
+\NormalTok{        (nthPrime n : ℝ) \^{} ((1 : ℝ) / (n : ℝ)))}
+
+\NormalTok{theorem not\_firoozbakht\_of\_pow\_le \{n : ℕ\} (hn : 1 ≤ n)}
+\NormalTok{    (h : (nthPrime n) \^{} (n + 1) ≤ (nthPrime (n + 1)) \^{} n) :}
+\NormalTok{    ¬ ((nthPrime (n + 1) : ℝ) \^{} ((1 : ℝ) / ((n : ℝ) + 1)) \textless{}}
+\NormalTok{        (nthPrime n : ℝ) \^{} ((1 : ℝ) / (n : ℝ)))}
+\end{Highlighting}
+\end{Shaded}
+
+The second is \textbf{pure \(\mathbb{N}\) arithmetic} --- no real
+arithmetic, no \texttt{Real.log} --- and is therefore the right target
+for a computational search. Note what it demands: the \textbf{index}
+\(n = \pi(p_n)\) must be certified, not merely the gap. \emph{A large
+gap alone is not a counterexample.}
+
+\textbf{Explicitly not admissible as a refutation}: exhibiting a gap
+above \(\log^2 p_n - \log p_n - 1\). That is the asymptotic surrogate,
+not \(B_n\), and the difference is \(O(1/\log p_n)\) --- which is
+exactly the size of the margin being contested.
+
+\subsubsection{4.4 RT-12 discharge --- hypothesis/conclusion
+separation}\label{44-rt-12-discharge--hypothesisconclusion-separation}
+
+Per §2.4, for every declaration this paper names as a result:
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+declaration & hypotheses & conclusion & conclusion among hypotheses? \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{firoozbakht\_of\_le} & \(1\le n\), \(n\le 25\) & F1 at \(n\) &
+\textbf{no} \\
+\texttt{firoozbakht\_gap\_of\_le} & \(1\le n\), \(n\le 25\) &
+\(g_n < B_n\) & \textbf{no} \\
+\texttt{nthPrime\_succ\_eq} & \(1\le k\), \texttt{nthPrime\ k\ =\ p},
+\texttt{q} prime, \(p<q\), no prime strictly between &
+\texttt{nthPrime\ (k+1)\ =\ q} & \textbf{no} \\
+\texttt{nthPrime\_eq\_1\ …\ \_26} & none & \$p\_i = \$ numeral &
+\textbf{no} \\
+\texttt{count\_prime\_eq\_of\_no\_prime} & \(a\le b\), no prime in
+\([a,b)\) & \(\pi\) constant & \textbf{no} \\
+\texttt{nthPrime\_succ\_le\_of\_prime} & \(1\le n\), \texttt{q} prime,
+\(p_n<q\) & \(p_{n+1}\le q\) & \textbf{no} \\
+\texttt{firoozbakht\_iff\_log} & \(1\le n\) & F1 \(\iff\) F3 &
+\textbf{no} (biconditional bridge) \\
+\texttt{firoozbakht\_iff\_int} & \(1\le n\) & F1 \(\iff\) F2 &
+\textbf{no} \\
+\texttt{firoozbakht\_iff\_gap} & \(1\le n\) & F1 \(\iff\) \(g_n<B_n\) &
+\textbf{no} \\
+\texttt{firoozbakht\_of\_gap\_lt} & \(1\le n\), \(n g_n < p_n L_n\) & F1
+at \(n\) & \textbf{no} \\
+\texttt{not\_firoozbakht\_of\_barrier\_le} & \(1\le n\), \(B_n \le g_n\)
+& \(\neg\)F1 at \(n\) & \textbf{no} \\
+\texttt{not\_firoozbakht\_of\_pow\_le} & \(1\le n\),
+\(p_n^{n+1}\le p_{n+1}^n\) & \(\neg\)F1 at \(n\) & \textbf{no} \\
+\texttt{nthPrime\_succ\_lt\_two\_mul} & \(1\le n\) & \(p_{n+1}<2p_n\) &
+\textbf{no} \\
+\texttt{firoozbakht\_of\_two\_pow\_le} & \(1\le n\), \(2^n \le p_n\) &
+F1 at \(n\) & \textbf{no} \\
+\end{longtable}
+
+No declaration in this table takes Firoozbakht\textquotesingle s
+conjecture --- in any of its five forms --- as a hypothesis. The two
+refutation criteria are genuine contrapositives; this was independently
+confirmed inside the kernel by typechecking
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{example (n : ℕ) (h1 : 1 ≤ n) (h2 : n ≤ 25)}
+\NormalTok{    (hbad : (nthPrime n) \^{} (n + 1) ≤ (nthPrime (n + 1)) \^{} n) : False :=}
+\NormalTok{  not\_firoozbakht\_of\_pow\_le h1 hbad (firoozbakht\_of\_le n h1 h2)}
+\end{Highlighting}
+\end{Shaded}
+
+which wires the refutation criterion and the certified range together
+and shows the kernel agrees they are incompatible.
+
+\subsubsection{4.5 An external cross-check on the
+numerals}\label{45-an-external-cross-check-on-the-numerals}
+
+Lean checks that the proofs follow. It does not check that the
+\emph{numerals} are the primes anyone means. Against an independent
+\texttt{sympy} sieve:
+
+\begin{verbatim}
+prime table p_1..p_26 matches sympy sieve: True
+n in 1..25 failing p_{n+1}^n < p_n^(n+1): []
+n with 2^n <= p_n (n < 40): [1]
+n < 72849 where linearised criterion n*g_n < p_n*log p_n FAILS: count=2 first=[2, 4]
+\end{verbatim}
+
+The third line is a genuinely useful fact: over the first
+\textasciitilde73 000 indices the linearised sufficient criterion fails
+at only \(n = 2\) and \(n = 4\), \textbf{both inside the range already
+proved outright} by \texttt{firoozbakht\_of\_le}. So
+\texttt{firoozbakht\_of\_gap\_lt} is not a lossy detour --- and equally,
+it is \textbf{no easier than the target}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5. What was ESTABLISHED on
+paper}\label{5-what-was-established-on-paper}
+
+These are arguments, not certificates. Each carries its tier per §1.5.
+
+\subsubsection{5.1 The record locus, and the size of the
+margin}\label{51-the-record-locus-and-the-size-of-the-margin}
+
+At the largest known maximal-gap locus {[}\texttt{kourbatov2015upper}
+Table 1, last row, \textbf{V0}{]}:
+
+\[k = 49\,749\,629\,143\,526, \qquad p_k = 1\,693\,182\,318\,746\,371, \qquad g_k = 1132.\]
+
+Recomputed here in 60-digit arithmetic from exact integer inputs
+(\textbf{{[}C{]}}):
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+quantity & recomputed & published & source \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\log p_k\) & \(35.0653861820133348\ldots\) & --- & --- \\
+\(f_k = p_k^{1+1/k}-p_k\) & \(1193.41777829404\ldots\) & \(1193.418\) &
+\texttt{kourbatov2015upper} Table 1 ✓ \\
+\(\ell_k = \log^2 p_k-\log p_k\) & \(1194.51592191172\ldots\) &
+\(1194.516\) & \texttt{kourbatov2015upper} Table 1 ✓ \\
+\(R_{\mathrm{csg}} = g_k/\log^2 p_k\) & \(0.9206385885574205\ldots\) &
+\(0.9206\) & \texttt{primegaplist\_faq} ✓ \\
+\(f_k/\log^2 p_k\) (the fence, same normalisation) &
+\(0.9705887446713\ldots\) & --- & \textbf{{[}C{]}} \\
+\textbf{shortfall \(f_k/g_k\)} & \(\mathbf{1.05425598789\ldots}\) & ---
+& \textbf{{[}C{]}} \\
+\end{longtable}
+
+\textbf{Use \(1.05426\)}, sourced directly to the \emph{published exact
+barrier} \(f_k = 1193.418\). Not \(1.055\) (an earlier figure in this
+run, superseded), and not via any \(c_n\) interval --- the exact barrier
+makes the explicit-bounds detour unnecessary. If an explicit-bounds
+route is wanted anyway it certifies \(1.05424 \pm 0.00005\) (Dusart 2010
+Props. 6.6/6.7, \textbf{V0}, validity \(k \ge 688\,383\)) ---
+consistent, with the exact value inside it.
+
+Tier: \textbf{L0/L1 + V0 + {[}C{]}}.
+
+\textbf{A caveat that is real, not decorative.} The statement "the CSG
+ratio \(R = g/\log^2 p\) has never exceeded 1" is \textbf{false as
+written}. It requires the restriction \(p > 7\). Recomputed here:
+\(R > 1\) at exactly three points --- \(p=2\) (\(R = 2.081369\)),
+\(p=3\) (\(1.657071\)), \(p=7\) (\(1.056366\)) --- and \(R \le 1\) for
+every other \(p \le 113\). The community source states the record
+\emph{with} the restriction ("the largest value observed for any
+\(p_1 > 7\)"); any restatement must carry it.
+
+\subsubsection{\texorpdfstring{5.2 Theorem A --- an unconditional
+verified range at
+\(H = 10^{20}\)}{5.2 Theorem A --- an unconditional verified range at H = 10\^{}\{20\}}}\label{52-theorem-a--an-unconditional-verified-range-at-h--1020}
+
+\begin{quote}
+\textbf{Theorem A (established, not proved).} F holds for every \(n\)
+with \(p_n < 10^{20}\).
+\end{quote}
+
+The argument is complete and every step is either first-principles or
+one of exactly two external premises, both named and isolated:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+premise & supplies & tier \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{P1} --- Axler, \emph{New bounds for the prime counting
+function}, the \(3.83\) member:
+\(\pi(x) < x\big/\big(\log x - 1 - \tfrac1{\log x} - \tfrac{3.83}{\log^2 x}\big)\)
+for \(x \ge 9.25\) & the analytic criterion & \textbf{V0} · \textbf{L2}
+--- see the locator fault below \\
+\textbf{P2} --- the census of first-occurrence prime gaps is complete
+below \(10^{20}\), yielding the 85 known maximal gaps & the range &
+\textbf{V1} {[}\texttt{primegaplist\_faq}{]} · \textbf{L3}: a community
+computational record, unrefereed, not machine-checked \\
+\end{longtable}
+
+Everything else --- the criterion, its monotonicity, the covering lemma,
+the base case, the assembly --- is L0. By the propagation rule the
+conclusion inherits its weakest premise: \textbf{Theorem A is L3/V1, and
+its weak link is computational data, not mathematics.}
+
+The structural device is a \textbf{lever}. If the maximal-gap table is
+complete below \(H\), with records \((P_i, G_i)\), then for
+\(P_i \le p_n < P_{i+1}\) we have \(g_n \le G_i\) --- a larger gap would
+be an unrecorded new record. Combined with a lower bound on \(B_n\)
+(from an \emph{upper} bound on \(\pi\), per §1.3), this turns
+\textasciitilde80 inequalities into a verified range of
+\(\approx 2.2\times10^{18}\) primes: \textbf{\(2.7\times10^{16}\) primes
+per inequality} {[}COMPUTED{]}. That ratio \emph{is} the content of the
+phrase "verified up to \(4\times10^{18}\)". Nobody has evaluated the
+criterion at \(10^{17}\) consecutive primes, and nobody will.
+
+Two subsidiary findings:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{The range is data-bound, not method-bound.} At the tightest of
+  the 85 records the criterion is satisfied with \(5.1\%\) to spare
+  {[}C{]}; \(H\) stops exactly where the census stops. The gain from
+  \(2^{64}\) (2019) to \(10^{20}\) (today) is \textbf{not mathematical}
+  --- the same argument gives both; the census moved.
+\item
+  \textbf{The relaxation costs nothing.} Using the unconditional
+  criterion instead of the exact barrier loses \(9.3\times10^{-6}\)
+  relative {[}C{]}. This is why the target closes at all.
+\end{itemize}
+
+\textbf{A live citation fault on P1 --- MAJOR-6, stated here rather than
+buried.} The Axler result is cited throughout this corpus as
+\textbf{"Corollary 3.5"}, which is the \textbf{arXiv v3} numbering,
+against a bibliographic entry whose journal-of-record fields are
+\emph{Integers} \textbf{16} (2016), A22. The published corrigendum
+numbers the affected result \textbf{Corollary 3.4, page 8}. A referee
+checking the version of record will \textbf{not} find the \(3.83\) bound
+at "Corollary 3.5". The premise is \emph{believed} --- the skeptic leg
+retrieved arXiv v3 and read the four-member family verbatim, confirming
+P1 at V0 --- but the locator does not resolve in the version it is
+attributed to, and the corpus never establishes where the \(3.83\)
+member sits in the published numbering. \textbf{Theorem A must not be
+published until this locator is repaired.}
+
+\subsubsection{5.3 The exhaustive floor the project owns
+outright}\label{53-the-exhaustive-floor-the-project-owns-outright}
+
+Independently of any external premise: F verified exhaustively for all
+\(p < 10^9\) --- \textbf{50 847 533 consecutive pairs} --- by sieve plus
+a \emph{runtime-certified} floating-point error bound, in 9 s. Tier
+\textbf{L0 + {[}C{]}}. This is the only part of the range this work owns
+without inheriting anyone\textquotesingle s computational claim. Below
+\(p = 1223\) the check is exact integer comparison of \(p_{n+1}^n\)
+against \(p_n^{n+1}\), with no arithmetic model at all.
+
+Within that same floor, \textbf{FFM} --- \emph{if F first fails at
+\(n^\star\), then \(g_{n^\star}\) is a record gap} --- is
+\textbf{certified, not assumed}, for all \(n \le 50\,847\,533\).
+
+\textbf{A vacuity note, applied here rather than inherited.} On any
+range where F is \emph{verified}, FFM is \textbf{vacuously true} and
+carries zero information: its antecedent is the negation of F. This
+paper therefore does \textbf{not} advertise "FFM proved on
+\([89, 10^{20})\)" as a deliverable, because on exactly that range F is
+verified from exactly those premises. What is non-vacuous is the
+\textbf{certificate} \(G_{n-1} < f_n\) on \([89, H)\) for every \(H\) to
+which the census is complete --- strictly stronger than FFM-at-\(n\) and
+not implied by F\textquotesingle s verification. The general FFM
+statement, for unbounded \(n\), remains \textbf{open}.
+
+\subsubsection{5.4 The FFM dichotomy}\label{54-the-ffm-dichotomy}
+
+The real deliverable of the FFM target is a structural theorem, not a
+range:
+
+\begin{quote}
+\textbf{Theorem B (established).} Every known route to proving FFM
+passes either through F itself or through a statement strictly stronger
+than F.
+\end{quote}
+
+Two elementary facts drive it. (a) F \(\Rightarrow\) FFM vacuously. (b)
+Hence any \emph{refutation} of FFM contains a refutation of F --- to
+exhibit a counterexample to FFM one must exhibit the least index at
+which F fails, and in particular an index at which F fails. So FFM is
+\emph{logically weaker} than F, \textbf{and the weakness buys nothing}.
+
+Tier \textbf{L0}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6. What was REFUTED}\label{6-what-was-refuted}
+
+Nothing about the conjecture. \textbf{Three routes} died, and the
+obituaries are quantitative.
+
+\subsubsection{6.1 The Riemann hypothesis route --- dead, with
+numbers}\label{61-the-riemann-hypothesis-route--dead-with-numbers}
+
+\begin{quote}
+\textbf{Theorem C (established).} The strongest \emph{published}
+RH-conditional prime-gap bound (Carneiro--Milinovich--Soundararajan
+2019, constant \(22/25\)) decides Firoozbakht at \textbf{exactly three
+indices}, \(n \in \{1,2,3\}\) --- and at \textbf{exactly one}, \(n = 3\)
+(\(p = 5\)), once the source\textquotesingle s own validity restriction
+\(p_n > 3\) is honoured. It is silent at every \(n \ge 4\), forever.
+\end{quote}
+
+\begin{quote}
+\textbf{Theorem D (established).} This is not a constant problem. For
+\textbf{every} \(c > 0\), a bound \(g_n \le c\sqrt{p_n}\log p_n\)
+decides F on a finite initial segment only. Improving the constant moves
+a threshold; it never changes the verdict.
+\end{quote}
+
+\begin{quote}
+\textbf{Theorem E (established).} The RH branch is \textbf{strictly
+dominated}. For every \(c \ge 10^{-7}\) --- seven orders of magnitude
+below the published constant, and six below \(c = 1/2\), which the CMS
+authors name as the limit of their method --- the usable set ends
+\emph{inside} the range already verified \textbf{unconditionally}. RH
+contributes \textbf{zero indices} that unconditional verification does
+not already own.
+\end{quote}
+
+Tier \textbf{L0 + {[}C{]}} for all three, resting on a \textbf{V0}
+reading of the CMS paper (but see the ledger caveat in §11.2).
+
+The \(\sqrt{x}\) shape is not laziness. Littlewood\textquotesingle s
+unconditional \(\Omega_\pm\) theorem forces any argument that bounds the
+prime-counting error pointwise and subtracts to work at that scale
+\textbf{regardless of RH}. (This explanatory proposition rests on a
+\textbf{V3} row for Littlewood 1914 and is stated as such; Theorems C--E
+do not use it.)
+
+\textbf{What was deliberately \emph{not} proved}: that RH does not
+\emph{imply} Firoozbakht. That is a claim about RH\textquotesingle s
+deductive closure and nothing here establishes it. The barrier proved is
+about the \textbf{shape of the bounds the known machinery emits}, over
+an explicitly enumerated surveyed set. That restraint is deliberate and
+is preserved in this paper.
+
+\textbf{One incidental positive.} RH \emph{does} have a use in this
+attack --- on the \textbf{refutation} branch, certifying the index
+\(n = \pi(p)\). It is on the wrong branch of the tree, and the
+unconditional bound was already comfortable there by a factor of
+\textasciitilde1600.
+
+\subsubsection{6.2 The monotone-barrier route to FFM --- dead, by an
+exact
+witness}\label{62-the-monotone-barrier-route-to-ffm--dead-by-an-exact-witness}
+
+The tempting proof of FFM routes through monotonicity of the exact
+barrier \(f_n\). \textbf{\(f_n\) is not monotone}: it decreases at
+\(57.88\%\) of steps and sits below its own running maximum at
+\(87.88\%\) of indices, with an \textbf{exact-integer witness at
+\(n = 7, 8\)} (\(f_7 - f_8 = 0.0281326864429\), reproduced independently
+in 40-digit arithmetic).
+
+The error is subtle and worth recording precisely: the \textbf{proxy}
+barrier \(\ell_n = \log^2 p_n - \log p_n\) \textbf{is} monotone in the
+index; \(f_n\) is not. Substituting one for the other is the mistake,
+and it is what makes FFM "the price of exactness".
+
+Tier \textbf{L0 + {[}C{]}}.
+
+\subsubsection{6.3 Unconditional analytic extension of the verified
+range --- dead
+permanently}\label{63-unconditional-analytic-extension-of-the-verified-range--dead-permanently}
+
+\begin{quote}
+\textbf{Theorem F (established).} No unconditional analytic result in
+the literature extends the verified range by a single prime, and none
+can: the best proven gap bound overshoots the barrier by a factor that
+\textbf{diverges} --- \(1.5\times10^{7}\) at \(10^{20}\),
+\(6\times10^{47}\) at \(10^{100}\).
+\end{quote}
+
+The range is \textbf{data-bound, not method-bound}. Tier \textbf{L0 +
+{[}C{]}}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7. Computational evidence}\label{7-computational-evidence}
+
+Every number here is reproducible from the run directory; no RNG, no
+network.
+
+\subsubsection{7.1 What was computed, and on what
+tier}\label{71-what-was-computed-and-on-what-tier}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+range & certified by & tier \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\([2,\,1223]\) & exact integer comparison \(p_{n+1}^n < p_n^{n+1}\) &
+\textbf{L0} --- no arithmetic model at all \\
+\([2,\,10^9)\) & exhaustive sieve + runtime-certified error bound; 50
+847 533 pairs, 9 s & \textbf{L0} --- owned outright \\
+\([89,\,4\times10^{18})\) & lever (gap table + Axler) & \textbf{L2}, 71
+inequalities \\
+\([89,\,2^{64})\) & same lever, longer table & \textbf{L2}, 76
+inequalities \\
+\([89,\,10^{20})\) & same lever, full b-file & \textbf{L2/L3} (community
+census), 80 inequalities \\
+\([89,\,1.857\times10^{19})\) & second, independent lever needing no
+Axler bound & \textbf{L2}, 79 inequalities \\
+beyond \(10^{20}\) & nothing & open \\
+\end{longtable}
+
+\textbf{No counterexample was found at any scale examined.} No leg
+expected to find one, and none of these ranges is evidence about the
+conjecture.
+
+\subsubsection{7.2 Independent
+reproduction}\label{72-independent-reproduction}
+
+An adversarial audit leg re-derived the load-bearing numbers in code
+written independently of the producing legs. Selected results:
+
+\begin{itemize}
+\tightlist
+\item
+  Re-sieved to \(2\times10^{7}\) in independent NumPy:
+  \(\min H_n = 1.196152422706632\) at \(n=2\);
+  \(\max D_n = 0.5486599111467569\) at \(n=214\) (\(p=1307\)) ---
+  \textbf{exact matches}.
+\item
+  Recomputed the record-locus bracket:
+  \(1193.345367 \le 1193.417778 \le 1193.459723\) --- \textbf{reproduces
+  to every quoted digit}.
+\item
+  Re-ran the 85-row lever: record \#4 fails
+  (\(\underline{B}/G = 0.823\)), \#5 onward passes, tightest ratio
+  \(1.054246\) at \#64 --- \textbf{matches}.
+\item
+  Cross-checked two independently sourced maximal-gap tables
+  (Wikipedia-sourced against OEIS b-files): \textbf{85/85 rows
+  identical} in \(G\), \(P\) and \(\pi(P)\). \emph{No producing leg had
+  performed this cross-check.}
+\item
+  Tested the unconditional criterion empirically at every index to
+  \(2\times10^{7}\): \textbf{0 violations}.
+\item
+  Re-ran all seven verifier scripts: \textbf{all exit 0}, four producing
+  byte-identical output.
+\end{itemize}
+
+\subsubsection{7.3 A genuinely open computational
+obligation}\label{73-a-genuinely-open-computational-obligation}
+
+Monotonicity of the lower barrier bound \(\underline{B}\) is used and
+\textbf{not proved}. It was tested on a grid \textasciitilde500× denser
+than any producing leg used --- 300 001 points over \([10, 10^{22}]\)
+--- with \textbf{0 non-monotone steps}. The gap remains a gap. Recorded
+as an open obligation, not as a result.
+
+\subsubsection{7.4 A correction to this work\textquotesingle s own
+opening
+framing}\label{74-a-correction-to-this-works-own-opening-framing}
+
+The attack opened with "the refutation branch is the live branch; the
+shortfall is \(5.5\%\)". That framing was \textbf{partially demoted}
+during the run, and this paper carries the demotion rather than the
+headline:
+
+\begin{itemize}
+\tightlist
+\item
+  the shortfall figure is arithmetically right (corrected: \(1.05426\),
+  §5.1) but is \textbf{not L0} as originally derived --- that derivation
+  traversed an unclosed literature node; it is L0 \emph{now}, via the
+  published exact barrier;
+\item
+  the sufficient criterion the headline leans on is \textbf{silent at
+  \(n = 2\) and \(n = 4\)} --- the \emph{tightest known cases} of the
+  conjecture. F is true there by the exact predicate (\(25 < 27\);
+  \(14641 < 16807\)), but the criterion does not know it;
+\item
+  of two \textbf{pre-registered} demotion criteria, one fired and one
+  did not. The naive probabilistic model predicts \(6.72\)
+  counterexamples below the verified frontier where \(0\) are observed
+  --- over-predicting by \(6.7\times\); the fitted crossover height is
+  \(10^{30}\)--\(10^{51}\), not \(10^{21}\).
+\end{itemize}
+
+\textbf{The honest reading}: the refutation branch keeps its heuristic
+motivation --- Granville\textquotesingle s
+\(\limsup_{x} \max_{p_n \le x}(p_{n+1}-p_n)/\log^2 x \gtrsim 2e^{-\gamma} \approx 1.12292\)
+is not excluded, and this \(\limsup\) is genuinely unknown --- and
+\textbf{loses its quantitative one}. Search is not affordable at any of
+the fitted heights.
+
+The crossover-height figure itself carries a live caveat: it is a
+\textbf{30-decade extrapolation from a model fit}, and the model tag did
+not survive into the decision that used it. It is reported here as a
+model output, never as a property of the primes.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{8. Evidence gate: BLOCKED}\label{8-evidence-gate-blocked}
+
+The gate is fail-closed and it closed. This section reports the verdict
+as the gate returned it.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+leg & requirement & verdict \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{LOOP} & verdict file present, well-formed, names the live round
+& \textbf{PASS} --- live round = 1 \\
+\textbf{KERNEL} & \texttt{lake\ build} exit 0 \textbf{and} grep-clean of
+\texttt{sorry}/\texttt{axiom} & \textbf{FAIL} --- exit 0 ✅ but one live
+\texttt{sorry}; 7 declarations carry \texttt{sorryAx} \\
+\textbf{SKEPTIC} & fault report exists \textbf{and} zero residual
+BLOCKERs & \textbf{FAIL} --- 2 live BLOCKERs \\
+\textbf{CORPUS} & red-team corpus present \textbf{and} coverage report
+non-empty & \textbf{PASS} --- 19 entries / 15 categories \\
+\end{longtable}
+
+\textbf{FAIL, not DEGRADED.} DEGRADED is available only when no formal
+backend was attempted. Lean \emph{was} run, \emph{did} build, and
+\emph{did not} discharge the \texttt{sorry}. Calling that DEGRADED would
+convert "we tried and the conjecture is still open" into "we could not
+try" --- a different and false statement.
+
+\subsubsection{8.1 The two live
+BLOCKERs}\label{81-the-two-live-blockers}
+
+The audit found \textbf{no mathematical error in any theorem}. Both
+BLOCKERs are claims the corpus makes \emph{about its own
+trustworthiness}, and both are false. That is exactly the class of fault
+a gate exists to stop.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+id & fault \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{BLOCKER-1} & A provenance record states that 44 rows of the
+load-bearing maximal-gap table were independently recomputed.
+\textbf{Thirty were.} A 47\% overstatement, sitting in the provenance
+record of the corpus\textquotesingle s single weakest premise (P2 of
+Theorem A). \\
+\textbf{BLOCKER-2} & The claim \emph{"the verified range itself excludes
+\(C \ge 1.1736\)"} is an \textbf{invalid inference}: a finite range
+cannot exclude a value of a \(\limsup\). It is a property of a model
+fit, read as a statement about the tail. \\
+\end{longtable}
+
+Neither needs new mathematics. One is a wrong row count; one is a
+sentence that must be deleted or restated. \textbf{This paper does not
+rely on either claim}: §7.2 reports only counts the audit itself
+verified, and §7.4 states the \(\limsup\) as unknown.
+
+\subsubsection{8.2 Seven MAJOR faults, carried
+forward}\label{82-seven-major-faults-carried-forward}
+
+Dominated by citation and cross-leg consistency: a locator absent from
+the version of record (\textbf{MAJOR-6}, disclosed in §5.2); two
+mutually incompatible verification tiers for the same source
+(\textbf{MAJOR-7}); one leg crediting a sibling with a premise the
+sibling had retracted (\textbf{MAJOR-4}); a vacuous conclusion sold as a
+headline verdict (\textbf{MAJOR-3}, corrected in §5.3); a docstring
+carrying a formally retracted claim (\textbf{MAJOR-5}); an undated
+superlative survey claim inside a V0 row (\textbf{MAJOR-8}, see §11.2);
+and the 30-decade extrapolation feeding a budget decision
+(\textbf{MAJOR-9}, caveated in §7.4).
+
+Of these, \textbf{MAJOR-3 and MAJOR-9 are corrected in this paper};
+\textbf{MAJOR-6 and MAJOR-8 are disclosed at the point of use};
+\textbf{MAJOR-4, MAJOR-5 and MAJOR-7 concern upstream artifacts this
+paper does not rely on.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{9. Limitations --- stated in full, not
+summarised}\label{9-limitations--stated-in-full-not-summarised}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{The conjecture is open.} It is not proved and not refuted
+  here. Nothing in this paper is evidence about its truth.
+\item
+  \textbf{No finite range is evidence.} Neither the kernel-checked
+  \(n \le 25\), nor the exhaustive \(p < 10^9\), nor Theorem
+  A\textquotesingle s \(10^{20}\). The whole difficulty is in the tail.
+\item
+  \textbf{Theorem A inherits an unrefereed computational premise (P2,
+  L3/V1)} and a \textbf{faulted citation locator (P1, MAJOR-6)}. It
+  should be read as \emph{medium} confidence, with the weak link on the
+  data side.
+\item
+  \textbf{The citation audit has not run.} No citation here has been
+  independently re-fetched and re-read by an auditor. §11 traces each to
+  a ledger row; that is provenance, not clearance.
+\item
+  \textbf{Six citations used in §6.1 sit on ledger rows that were
+  proposed but never merged} into the authoritative ledger. §11.2 lists
+  them explicitly.
+\item
+  \textbf{Three named gaps remain unsourced or unusable}: the four-term
+  expansion \(B_n = L^2-L-1-3/L-13/L^2+O(L^{-3})\) is \textbf{unsourced}
+  --- the published theorem gives only the \(+o(1)\) form, and this
+  paper therefore does \textbf{not} use the lower-order terms; the
+  Baker--Harman--Pintz threshold \(x_0\) is \textbf{ineffective as
+  published}, so \(0.525\) must never be quoted as an explicit
+  unconditional bound without that caveat; and no live URL exists for
+  the canonical Nicely gap tables (all return HTTP 404 as of 2026-07-24)
+  --- cite the community project instead.
+\item
+  \textbf{The monotonicity of \(\underline{B}\) (§7.3) is used and
+  unproved.}
+\item
+  \textbf{Only one attack round ran} (a configured cap, not a failure
+  --- the executor was verified capable). There is therefore no
+  shrink-versus-churn signal: the list of \texttt{sorry}-carrying
+  declarations entered at 7 and left at 7, \textbf{identical, not
+  churned}. The six corollaries were never independent targets --- they
+  inherit from the head.
+\item
+  \textbf{\texttt{lake\ build} was not re-executed by this leg.} The
+  build record (exit 0, 8253 jobs) is read as the kernel
+  leg\textquotesingle s own transcript.
+\item
+  \textbf{The delivery posture is staged.} §0.2.
+\end{enumerate}
+
+\subsubsection{9.1 What must close before
+release}\label{91-what-must-close-before-release}
+
+In the order the evidence imposes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Close \textbf{BLOCKER-1} (correct the row count) and
+  \textbf{BLOCKER-2} (delete or restate the invalid inference), and
+  unwind any decision resting on the latter.
+\item
+  Repair the \textbf{MAJOR-6} locator: establish where the \(3.83\)
+  member sits in the \emph{published} Axler numbering, or re-attribute
+  P1 to arXiv v3 explicitly in every place it appears.
+\item
+  Merge or drop the six \textbf{proposed-but-unmerged ledger rows} of
+  §11.2. Theorems C--E cannot ship on unmerged rows.
+\item
+  Run \textbf{\texttt{citation-gate}}, then
+  \textbf{\texttt{editorial-verdict}}.
+\end{enumerate}
+
+Steps 1--4 are corpus-honesty and citation work, not mathematics.
+\textbf{None of them will close the kernel leg}: that closes only if the
+conjecture is proved, which is the open problem itself.
+
+\subsubsection{9.2 The honest forecast}\label{92-the-honest-forecast}
+
+More rounds of the same shape would very likely keep producing
+scaffolding without moving the head. The obstruction is not a missing
+lemma that a re-read would surface --- it is the \textbf{categorical gap
+between polylogarithmic and power-of-\(p\) gap bounds} (§1.4). If
+further rounds are run, their value is in closing the corpus faults and
+hardening the criteria, \textbf{not} in expecting the \texttt{sorry} to
+fall.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{10. What this paper does not
+claim}\label{10-what-this-paper-does-not-claim}
+
+\begin{itemize}
+\tightlist
+\item
+  It does not claim the conjecture is true, false, likely, or unlikely.
+  The community\textquotesingle s heuristic expectation (from
+  Granville\textquotesingle s revised Cramér model) is that it is
+  \textbf{false}; that is recorded as a heuristic and is used as a
+  premise nowhere.
+\item
+  It does not claim citation clearance (§9, limitation 4; §11).
+\item
+  It does not claim that RH fails to imply Firoozbakht (§6.1).
+\item
+  It does not claim any verified range is evidence.
+\item
+  It does not claim FFM on any range as a substantive result (§5.3).
+\item
+  It does not use the unsourced lower-order terms of the \(B_n\)
+  expansion.
+\item
+  It does not claim "proved" for anything outside §4.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{11. Citation trace}\label{11-citation-trace}
+
+Every citation in this paper resolves to a row in the
+run\textquotesingle s authoritative source ledger,
+\texttt{source-ledger/source-ledger.md}. Section numbers below are that
+document\textquotesingle s.
+
+\subsubsection{11.1 Merged ledger rows used in this
+paper}\label{111-merged-ledger-rows-used-in-this-paper}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+citekey & ledger § & V & locator relied on & used in \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{firoozbakht1982} & §3.1 & V1 & attribution + date only & §1.1,
+§0.3 \\
+\texttt{rivera2002conj30} & §3.1 & V1 & page body & §1.1 \\
+\texttt{ribenboim2004little} & §3.1 & V2 & p. 185 & §1.1 \\
+\texttt{visser2019verifying} & §3.1, §3.2, §3.8 & \textbf{V0} & Conj. 3
+eq. (2.4); Abstract; §4 & §1.3, §4.1, §7.1 \\
+\texttt{kourbatov2015verification} & §3.2 & V1 & Abstract & §4.1,
+§7.1 \\
+\texttt{kourbatov2015upper} & §3.3, §3.4 & \textbf{V0 + C} & Table 1
+last row; Thm 5; §3 & §1.3, §5.1 \\
+\texttt{kourbatov2015corrigendum} & §3.4 & \textbf{V0} & full text &
+§11.3 \\
+\texttt{primegaplist\_faq} & §3.2, §3.3 & V1 + C & FAQ body & §5.1,
+§5.2, §7.1 \\
+\texttt{axler2014newbounds} & §3.5 & \textbf{V0} & Cor. 3.5 (arXiv v3)
+--- \textbf{see MAJOR-6} & §5.2 \\
+\texttt{axler2016corrigendum} & §3.5 & V2 & via Kourbatov corrigendum &
+§5.2, §11.3 \\
+\texttt{dusart2010estimates} & §3.5 & \textbf{V0 + C} & Props. 6.6, 6.7
+& §5.1 \\
+\texttt{granville1995harald} & §3.6 & \textbf{V0} & display following
+eq. (20); eq. (14) & §7.4 \\
+\texttt{cramer1936order} & §3.6 & V2 & block quotation in Granville &
+§11.3 \\
+\texttt{bhp2001difference} & §3.6 & V2 & main theorem & §1.4; §9,
+limitation 6 \\
+\texttt{fgkmt2018long} & §3.7 & V1 & Abstract & §11.3 \\
+\end{longtable}
+
+\subsubsection{\texorpdfstring{11.2 Proposed but \textbf{unmerged} rows
+--- a live
+obligation}{11.2 Proposed but unmerged rows --- a live obligation}}\label{112-proposed-but-unmerged-rows--a-live-obligation}
+
+The RH-route results of §6.1 rest on citations that a downstream leg
+\textbf{proposed} for the ledger and that were \textbf{never merged}
+into it. They are recorded here with the verification level the
+proposing leg claimed, and they are \textbf{not cleared}:
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+citekey & claimed V & statement relied on & status \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{cms2019fourier} --- Carneiro, Milinovich, Soundararajan,
+\emph{Fourier optimization and prime gaps}, Comment. Math. Helv.
+\textbf{94} (2019), 533--568; arXiv:1708.04122 & \textbf{V0} (claimed;
+quotations independently re-fetched and confirmed exact by the audit
+leg) & on RH, \(g_n \le \tfrac{22}{25}\sqrt{p_n}\log p_n\) for
+\(p_n > 3\); the method\textquotesingle s limiting constant is
+\(\tfrac12\) & \textbf{UNMERGED} \\
+\texttt{littlewood1914} & \textbf{V3} &
+\(\psi(x)-x = \Omega_\pm(\sqrt x \log\log\log x)\) & \textbf{UNMERGED +
+V3} --- used only for the explanatory remark in §6.1, which is flagged
+as such \\
+\texttt{dudek2015riemann} & V1 & earlier RH-conditional constant &
+\textbf{UNMERGED}, lineage only \\
+\texttt{leenosal2025sharper} & \textbf{V0} & sharper RH error bounds &
+\textbf{UNMERGED}, not load-bearing here \\
+\texttt{schoenfeld1976sharper} & V3 → V2 (tier disputed,
+\textbf{MAJOR-7}) & classical RH bound & \textbf{UNMERGED}, \textbf{not
+used in this paper} \\
+\texttt{montgomery1973pair} & V3 & pair-correlation consequence &
+\textbf{UNMERGED}, \textbf{not used in this paper} \\
+\end{longtable}
+
+\textbf{Consequence, stated plainly.} Theorems C, D and E of §6.1 are
+\textbf{established} mathematics resting on a citation that is not yet
+in the authoritative ledger. They must not be released until
+\texttt{cms2019fourier} is merged at V0 and \texttt{littlewood1914} is
+either promoted or the explanatory remark is restated as conditional on
+it. This is item 3 of §9.1.
+
+A further caveat on the same family (\textbf{MAJOR-8}): the phrase
+\emph{"the strongest published RH-conditional gap bound"} is a
+\textbf{superlative survey claim}, and no leg documents a literature
+sweep after 2019 --- one was attempted and blocked by rate limiting.
+§6.1 therefore says "the strongest \emph{published} bound" as the
+producing leg\textquotesingle s assessment, not as a verified fact about
+the literature as of 2026.
+
+\subsubsection{11.3 Citation hygiene notes that must survive into any
+restatement}\label{113-citation-hygiene-notes-that-must-survive-into-any-restatement}
+
+Five errors are easy to make in this literature, and the ledger pins
+each:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{The \(b = 1.17\) sufficient condition has a corrected validity
+  range.} Kourbatov\textquotesingle s Theorem 3 originally rested on
+  Axler\textquotesingle s bound at "\(x \ge 5.43\)";
+  Axler\textquotesingle s own corrigendum moved that to
+  \(x \ge 2\,634\,800\,823\), and Kourbatov published a corrigendum
+  rewriting the proof. Any citation of "\(b = 1.17 \Rightarrow\)
+  Firoozbakht" that does not carry \(p_k \ge 2\,634\,800\,823\)
+  \textbf{plus} the unconditional check on \([29,\, 2\,634\,800\,823]\)
+  is citing a withdrawn proof. Cite arXiv:1506.03042\textbf{v4}.
+\item
+  \textbf{The verification frontier is \(2^{64}\), not
+  \(4\times10^{18}\).} \(4\times10^{18}\) is Kourbatov\textquotesingle s
+  2015 exhaustive-sieve range; Visser 2019 covers \(p < 2^{64} \approx
+  1.844\times10^{19}\), for Firoozbakht \emph{and} the two strictly
+  stronger Nicholson and Farhadian conjectures. The community census
+  reaches \(10^{20}\) (§5.2, P2).
+\item
+  \textbf{Explicit bounds here are Axler\textquotesingle s, not
+  Rosser--Schoenfeld\textquotesingle s or Dusart\textquotesingle s.}
+  Kourbatov\textquotesingle s chain uses Axler. Writing
+  "Rosser--Schoenfeld / Dusart" while reproducing that derivation is
+  mis-citing. (Dusart 2010 \emph{is} used, at V0, but for the \(p_k\)
+  bracket of §5.1 --- a different role.)
+\item
+  \textbf{The long-gaps exponent is \((\log\log\log X)^{1}\), not
+  squared.} The 2018 record improves the 2016 one by exactly one
+  iterated log in that denominator. This is the easiest citation error
+  in the family. Either way the bound is \(\ll \log^2 X\) --- too small
+  by a factor \(\sim \log X/\log\log X\) to touch Firoozbakht.
+\item
+  \textbf{Cramér stated the \(\limsup = 1\) relation about his random
+  model, and only \emph{suggested} the transfer to the primes.} Any
+  sentence beginning "Cramér conjectured" must carry that hedge. And
+  "Cramér 1920/21" is a mis-citation: the RH gap bound is Cramér 1920,
+  with a distinct companion paper the same year.
+\end{enumerate}
+
+Also recorded as \textbf{absences}, which is part of the provenance:
+there is \textbf{no primary document by Firoozbakht} (the standard
+reference is literally "\emph{(1982), unpublished}"), so "Firoozbakht
+proposed, in 1982" is supportable and "Firoozbakht proved/published" is
+not; the canonical Nicely gap tables are \textbf{dead links}; and
+\textbf{no proof, disproof, or accepted counterexample of the conjecture
+was found anywhere in the literature.}
+
+The bibliography accompanying this paper is \texttt{references.bib} (31
+merged citekeys, plus a clearly separated addendum block for
+§11.2\textquotesingle s unmerged rows).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{12. Reproduction}\label{12-reproduction}
+
+All artifacts of the run live under the run directory. The load-bearing
+checks:
+
+\begin{verbatim}
+# formal layer
+cd <run>/lean-probe/lean && lake build          # exit 0; one `sorry` warning, at Statement.lean
+                                                # Audit.lean prints axioms for 31 declarations
+
+# recomputation layer (each deterministic, no RNG, no network)
+python3 <run>/source-ledger/verify_ledger.py    # ledger rows
+python3 <run>/proof-attempt__0/verify_pa0.py    # FFM numerics
+python3 <run>/proof-attempt__1/verify_rh.py     # RH usable sets
+python3 <run>/proof-attempt__2/verify_pa2.py    # the 85-row lever
+python3 <run>/notebooks__2/verify-findings.py   # the verified-range lever
+python3 <run>/concept-cards/verify_cards.py     # concept-card invariants
+python3 <run>/skeptic/verify_faults.py          # the audit's own re-derivations
+python3 <run>/synthesize/verify_synthesis.py    # 56/56 checks, exit 0
+\end{verbatim}
+
+The synthesis verifier is deliberately a \textbf{tripwire}: it asserts
+that the two BLOCKERs are still live. If a future session closes them,
+those checks \textbf{fail} --- which is the intended behaviour, not a
+regression.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{13. The one-paragraph
+version}\label{13-the-one-paragraph-version}
+
+The primes walk along a road, and every step is a gap. Firoozbakht drew
+a fence at height roughly \((\log p)^2\) and said the primes never jump
+it --- not once, not ever, all the way to infinity. This work did not
+decide that. What it did was survey the ground carefully. It showed the
+fence is \emph{exactly} the right description of the conjecture, not an
+approximation. It proved --- inside a kernel, in the literal form ---
+that the primes stay under it for the first 25 steps, and established by
+argument that they do so for every prime below \(10^{20}\), resting on
+two named external premises. It showed that the Riemann hypothesis, the
+biggest hammer anyone would reach for, settles the question for the
+prime 5 and for no other. It showed that no unconditional method in the
+literature can extend the verified range by a single prime, and that the
+shortfall \textbf{diverges} rather than closing. And it built the two
+exact criteria that a future proof and a future refutation would each
+need. Then its own auditor found two places where the corpus was
+overstating how carefully it had checked itself, and the gate closed red
+on that. \textbf{The mathematics in this corpus is sound. Its
+self-description was not, in two places. The conjecture is still open.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\emph{Emitted by the \texttt{write-paper} leg
+(\texttt{edit-20260724-9e06}) of the \texttt{math-attack} polymer, run
+node. External attribution: \textbf{Noogram}.
+Firoozbakht\textquotesingle s conjecture is \textbf{open} --- not
+proved, not refuted. Evidence-gate status: \textbf{BLOCKED}. Citation
+clearance: \textbf{not claimed, not audited}. Delivery posture:
+\textbf{staged}.}
+
+\printbibliography
+
+\end{document}
