@@ -1,25 +1,28 @@
 # firoozbakht — a full-lane cosmon-fleet attack on Firoozbakht's conjecture
 
-> ### ⏳ Run in progress
-> This repository is being written **by an agent fleet that is still running.**
-> The understanding phase and the **attack** are in: decomposition, source ledger,
-> concept cards, framing, **three proof-attempts** (one per subquestion), the
-> **Lean skeleton** (the firewall's formal statement), and computational notebooks
-> — alongside a single-model benchmark. Each proof-attempt opens with an explicit
-> verdict and does **not** fake a proof: attempt #0 states its obstruction exactly
-> and finds its own motivating premise false as stated; #1 and #2 report "open —
-> neither proved nor refuted." The **rigor layer is in too**: the adversarial
-> **skeptic** attacked every proof line-by-line, re-derived every number in
-> independent code, fetched the primary sources — found no mathematical error, but
-> **blocked the seal** on two epistemic-standing faults (a provenance file
-> overstating its own verification by 47%, an invalid inference sold as a result).
-> And the **Lean `lake build` probe** returned the machine verdict: exit 0,
-> **exactly one `sorry` — the conjecture itself — left honestly undischarged**
-> (`sorryAx` in `#print axioms`), while the budget produced **11 new `sorry`-free
-> machine-checked theorems** around it. Still landing: the citation/evidence gates
-> and the synthesis write-up. Watch the commit log, or see
-> [`runs/2026-07-24-full-lane/STATUS.md`](runs/2026-07-24-full-lane/STATUS.md)
-> for exactly which nodes have completed.
+> ### ✅ Run complete — 23/23 nodes — and the seal is **BLOCKED**, honestly
+> The fleet drained the whole DAG. The headline is not a proof; it is a
+> **disciplined refusal to overclaim**, which is the point:
+>
+> - **The conjecture is neither proved nor refuted** — it is open. The Lean
+>   `lake build` returned exit 0 with **exactly one `sorry`, the conjecture itself**,
+>   left undischarged (`sorryAx` in `#print axioms`). Never dressed up as anything else.
+> - **But the budget produced real, machine-checked mathematics:** 11 new `sorry`-free
+>   Lean theorems, the conjecture proved outright for 1≤n≤25, two exact refutation
+>   criteria, and three named routes killed (two with reproducible obituaries).
+> - **Every gate fails closed, on purpose.** The adversarial `skeptic` found *no
+>   mathematical error* — every proof sound, every number reproduces — yet **blocked
+>   the seal** on two *epistemic-standing* faults (a provenance file overstating its own
+>   independent verification by 47%, an invalid inference sold as a result). The
+>   `citation-gate` also blocked — not for a fabricated citation (there are none) but
+>   for coverage below the tier bar.
+> - **The paper is included, and it refuses to clear itself.** `runs/2026-07-24-full-lane/paper/paper.md`
+>   carries a `staged — not cleared for release` posture in its own §0.2, naming the three
+>   gates that block it. That self-gating *is* the discipline on display.
+>
+> See [`runs/2026-07-24-full-lane/STATUS.md`](runs/2026-07-24-full-lane/STATUS.md) for the
+> node table, and [`runs/2026-07-24-full-lane/synthesis.md`](runs/2026-07-24-full-lane/synthesis.md)
+> for the fold of the whole run. Full un-scrubbed history is in a private archive.
 
 This is a dedicated galaxy running the **full lane** of the
 [`math-attack`](https://github.com/noogram/sporarium) cosmon spore against
