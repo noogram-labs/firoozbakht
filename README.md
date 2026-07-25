@@ -10,7 +10,7 @@
 > | Published as | A rebuilt, scrubbed repo | The galaxy exactly as generated |
 > | Also hosts | **The Codex solo baseline** both runs are compared against | — |
 >
-> Read this one for the baseline, and for what a fleet does when a stray document enters its workspace. Read the other for the independent attack. The comparative study of both runs against the solo baseline is [*Firoozbakht: a solo strong model against a clean-room fleet*](https://github.com/noogram/sporarium/blob/main/docs/reports/2026-07-25-firoozbakht-codex-cleanroom-comparison.md).
+> Read this one for the baseline, and for what a fleet does when a stray document enters its workspace. Read the other for the independent attack. The comparative study of both runs against the solo baseline is [*Firoozbakht: a solo strong model against a clean-room fleet*](https://github.com/noogram/sporarium/blob/main/docs/reports/2026-07-25-firoozbakht-codex-cleanroom-comparison.en.md).
 
 > ### ✅ Run complete — 23/23 nodes — and the seal is **BLOCKED**, honestly
 > The fleet drained the whole DAG. The headline is not a proof; it is a **disciplined refusal to overclaim**, which is the point:
