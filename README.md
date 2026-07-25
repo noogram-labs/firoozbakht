@@ -52,13 +52,35 @@ run failing.*
    firewall + citation audit + red-team + adversarial skeptic). Filling in as the
    run drains.
 2. **`runs/2026-07-24-full-lane/codex-solo-attack.md`** — a **single strong model,
-   solo**, given the same mission as a benchmark. It is honest on its own — it
-   states plainly that it neither proves nor refutes the conjecture, and flags its
-   substantial overlap with known work. That honesty is the baseline the fleet is
-   measured against: the fleet's added value is not "stops it lying" (a good model
-   left alone is already fairly honest) — it is the **independent recount**: the
-   skeptic re-derives, the citation audit mechanically checks the locators the
-   prover cited from memory, and Lean refuses the hand-wave.
+   solo**, given the same mission. It is honest on its own — it states plainly
+   that it neither proves nor refutes the conjecture, and flags its substantial
+   overlap with known work. The fleet's added value is therefore not "stops it
+   lying" (a good model left alone is already fairly honest) — it is the
+   **independent recount**: the skeptic re-derives, the citation audit
+   mechanically checks the locators the prover cited from memory, and Lean
+   refuses the hand-wave.
+
+### ⚠️ This is not a clean-room comparison — and here is exactly why
+
+Read the two side by side, but **do not read them as independent runs.** The solo
+attempt was written into this galaxy's working tree, at its root, under a generic
+filename, *while the fleet was still running*. The fleet found it and read it.
+
+We are publishing that fact rather than quietly re-running, because what the fleet
+did next is the more interesting result: **it treated the stray document as an
+untrusted input and audited it.** The source ledger flagged its four-term
+expansion of $B_n$ as **unsourced** (gap G1 — "derive it with proof, or delete
+it"); one proof attempt states explicitly that it *does not use* that expansion
+and routes through a cited bound instead; the concept cards caught a notation
+collision between the two documents. No claim in the fleet's paper rests on the
+solo document.
+
+So the honest reading is: the verification layer held under an unplanned
+contamination, but the *benchmark* claim does not — you cannot measure
+independence with a run that read the baseline. Treat item 2 as **prior art the
+fleet audited**, not as a control arm. A genuine clean-room comparison requires
+the solo attempt to live outside the worktree for the whole run; that discipline
+is now an explicit part of the spore's input perimeter.
 
 ## Lineage
 

@@ -36,6 +36,15 @@ honest on its own — which is the point: the fleet is not sold as a lie-detecto
 for a dishonest model, but as the **independent verification layer** a lone model
 cannot give itself.
 
+**Caveat, published rather than hidden:** the solo attempt was written into this
+galaxy's working tree, at its root, under a generic filename, while the fleet was
+still running — so the fleet read it. It audited it rather than absorbing it (the
+source ledger flagged one of its expansions as unsourced; a proof attempt
+explicitly declines to use it), and no claim in the fleet's paper rests on it. But
+a run that read the baseline cannot measure independence from it. Item 2 is
+therefore **prior art the fleet audited**, not a control arm. See the README for
+the full account.
+
 ## Honesty discipline
 
 Node roles are published; internal molecule IDs and machine paths are not. The
