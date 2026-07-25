@@ -13,8 +13,8 @@
 >
 > Read this one for the baseline, and for what a fleet does when a stray
 > document enters its workspace. Read the other for the independent attack.
-> The comparative study of both is in
-> [sporarium `docs/reports/`](https://github.com/noogram/sporarium/tree/main/docs/reports).
+> The comparative study of both runs against the solo baseline is
+> [*Firoozbakht: a solo strong model against a clean-room fleet*](https://github.com/noogram/sporarium/blob/main/docs/reports/2026-07-25-firoozbakht-codex-cleanroom-comparison.md).
 
 > ### ✅ Run complete — 23/23 nodes — and the seal is **BLOCKED**, honestly
 > The fleet drained the whole DAG. The headline is not a proof; it is a
